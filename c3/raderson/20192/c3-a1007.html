@@ -1,0 +1,131 @@
+<!--
+DevDOCS
+
+Bulma Quick Start:
+  - https://bulma.io/documentation/overview/start/
+Latex:
+  -  https://oeis.org/wiki/List_of_LaTeX_mathematical_symbols
+-->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Cálculo 3</title>
+    <link rel="stylesheet" href="/shared/bulma.min.css">
+    <style type="text/css">
+      .main {
+         margin: 0 auto;
+         max-width: 720px;
+      }
+
+      /*source: https://stackoverflow.com/a/9753612*/
+      .tpre {
+         font-family: monospace;
+         white-space: pre;
+      }
+      .title {
+        font-size: 14pt;
+        text-align: center;
+      }
+      .tsec {
+        font-size: 13pt;
+        text-align: center;
+      }
+      .sec {
+        margin-bottom: 1em;
+      }
+    </style>
+    <link rel="stylesheet" type="text/css" href="c3/graph.css">
+  </head>
+  <body>
+  <div>
+    <div id="pagetop" class="container main">
+      <div class="title">Cálculo 3 - Aulas</div>
+      <div>
+        <div class="title">Tabela de Conteúdo</div>
+        <ul>
+          <li><a href="c3-a0829.html">Limites e Plano Tangente - Qui. 29 de Agosto</a></li>
+          <li><a href="c3-a0909.html">Teorema da Função Implícita - Seg. 09 de Setembro</a></li>
+          <li><a href="c3-a0910.html">Teorema de Fubini - Ter. 10 de Setembro</a></li>
+          <li>Prova 1 - Seg. 07 de Outubro</li>
+        </ul>
+      </div>
+
+      <div class="content" style="margin-top: 1em;">
+        <div class="sec">
+          <div class="title" id="lpt">Prova 1 - Seg. 07 de Outubro</div>
+          <p><b>Questão 1.</b> Considere a superfície \(S: x_1^2 + x_2^2 -3x_3 - 2 = 0\)</p>
+          <p><b>a)</b> (1,0 ponto) Faça um esboço da superfície S.</p>
+          <p><b>b)</b> (1,0 ponto) Determine a equação do plano tangente \(TS_a\), bem como a equação paramétrica da reta normal a \(S\) no ponto \(a\), para \(a = (-2,-4,6)\)</p>
+          <p><b>Solução: </b></p>
+          <p>Precisamos calcular o \(\nabla g(x_1,x_2,x_3)\):</p>
+          <p>\(\nabla g(x_1,x_2,x_3) = (g_{x_1}, g_{x_2}, g_{x_3})\)</p>
+          <p>\(\nabla g(x_1,x_2,x_3) = (2x_1, 2x_2, -3)\)</p>
+          <p>Substituindo no ponto  \(a = (-2,-4,6)\), temos:</p>
+          <p>\(\nabla g(a) = \nabla g(-2,-4,6) = (-4,-8,-3)\)</p>
+          <p>A equação do plano tangente é dada por: </p>
+          <p>\(TS_a: -4(x_1+2) - 8(x_2+4) -3(x_3-6)\)</p>
+          <p>Enquanto a equação paramétrica da reta normal é dada por: </p>
+          <p>\(R: \{a + \nabla g(a)t\} = \{(-2,-4,6) + (-4,-8,-3)t\}\)</p>
+          <p>A seguir se encontra o desenho mostrando a superfície S, o plano tangente (\(TS_a\)) e a reta normal \(R\):</p>
+           <div><center>
+            <img src="p1/q1b-plot.png" width="80%">
+            <div style="text-align: right;">Ver <a href="https://www.geogebra.org/3d/fwytzsrk">caderno</a> no GeoGebra</div>
+            \(\text{(5.0) } z(x,y) = -x^2 - y^2 + 12\)
+          </center></div>
+          <p><b>Questão 2.</b> (2,0 pontos) Dado \(\epsilon > 0\) encontre \(\delta > 0\) tal que, \(| x_1^2 + 3x_2 - 19| < \epsilon\), se \(0 < |(x_1, x_2) - (2,5)| < \delta\). Ou seja, mostre usando a definição de limite que \(\lim_{x\to (2,5)}(x_1^2 + 3x_2) = 19\)</p>
+          <p><b>Questão 3.</b> (1,0 pontos) Determine a fórmula de Taylor de ordem 1 e centro \(a = (1,1)\) de \(f(x) = ln(x_1x_2)\)</p>
+          <p><b>Questão 4.</b> (2,5 pontos) Determine os extremos relativos de \(f(x) = x_1^3 + x_2^2 - 6x_1^2 + x_2 - 1\).</p>
+          <p><b>Questão 5.</b> (2,5 pontos) Ache o volume do sólido limitado pelo parabolóide \(x^2 + y^2 + z = 12\) e o plano \(z = 8\).</p>
+          <p><b>Solução: </b></p>
+          <p>O importante desses exercícios é saber desenhar a função para se ter uma ideia dos limites a serem obtidos. Há várias formas de se fazer o mesmo. Neste caso, podemos isolar a variável \(z\), tendo assim o seguinte gráfico:</p>
+          <div><center>
+            <img src="p1/q5-plot.png" width="80%">
+            <div style="text-align: right;">Ver <a href="https://www.geogebra.org/3d/h2fxvjsr">caderno</a> no GeoGebra</div>
+            \(\text{(5.0) } z(x,y) = -x^2 - y^2 + 12\)
+          </center></div>
+          <p>A questão solicita calcular o volume da área destacada em verde, que está limitada pera parabolóide com concavidade voltada para baixo e o plano \(z = 8\). O desenho sugere que o valor de z estará no intervalo \([0,8] \subset \mathbb{R}\), já que o valor mínimo de z está limitado pelo plano \(z = 8\) e o valor máximo, pela função (5.0). Nesse último basta notar que as variáveis \(x \text{ e } y\) só substrairão de 12 independentemente se forem positivos ou negativos. O menor valor da expressão \(-x^2 - y^2\) é 0. Logo, o valor máximo que \(z\) assume é 12.</p>
+          <p>O próximo passo é realizar a transformação para cordenadas cilindricas: </p>
+          <p>\(
+            \left\{
+            \begin{array}{c}
+              \text{(5.1) } x = rcos(\theta) \\
+              \text{(5.2) } y = rsen(\theta) \\
+              \text{(5.3) } z = z
+            \end{array}
+            \right.
+          \)</p>
+          <p>Desta transformação, podemos colocar o r em função de z, ao substituir os valores de x e y dados pela expressão (5.1) e (5.2):</p>
+          <p>\(
+            z = -rcos(\theta)^2 - -rsen(\theta)^2 + 12
+            \Rightarrow
+            z = -r^2(cos^2(\theta) + sen^2(\theta)) + 12
+            \Rightarrow
+            z = -r^2(1) + 12
+            \Rightarrow
+            r = \pm\sqrt{12 - z}
+          \)</p>
+          <p>A próxima etapa é definir os intervalos de \(z,r,\theta\). Ao fixar um valor de z, percebemos que se forma um circulo de raio \(r = \sqrt{12 - z}\) no plano xy. Neste caso, o \(\theta \in [0,2\pi]\) para cada z fixado.</p>
+          <div>
+            <center>
+              <img src="p1/q5-plot-cilindrico.png" width="60%">
+            </center>
+          </div>
+          <p>Dada a figura, podemos montar a seguinte integral (5.4). Resolvendo-a em (5.5), temos o valor de \(8\pi\).</p>
+          <p>
+            \(
+            \text{(5.4) }\int_{0}^{2\pi}\int_{8}^{12}\int_{0}^{\sqrt{12-z}}drdzd\theta \stackrel{(5.5)}{\Rightarrow} 8\pi
+            \)
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="/shared/jquery-3.3.1.min.js"></script>
+  <script src="/shared/mathjax/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
+  <script>
+  </script>
+  </body>
+</html>
